@@ -110,6 +110,9 @@ void sixenseThreadFunc()
             if (state.ulButtonPressed & vr::ButtonMaskFromId(vr::k_EButton_ApplicationMenu))
                 data.buttons |= SIXENSE_BUTTON_START;
 
+            if (state.ulButtonPressed & vr::ButtonMaskFromId(vr::k_EButton_A))
+                data.buttons |= SIXENSE_BUTTON_1;
+
             if (state.ulButtonPressed & vr::ButtonMaskFromId(vr::k_EButton_SteamVR_Touchpad))
             {
                 if (state.rAxis[0].y < 0.0f)
